@@ -1,0 +1,220 @@
+/* .location-info {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+.location-info h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.location-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-info li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.location-icon {
+  color: red;
+  font-size: 2rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;  /* Prevent overflow issues */
+}
+
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+/* Header Styles */
+.header {
+  background: #333;  /* Dark background for contrast */
+  color: white;       /* White text color */
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 1000;      /* Make sure it's on top */
+  position: relative; /* Needed for z-index to take effect */
+}
+
+/* Ensure the h1 in header is visible */
+.header h1 {
+  color: white; /* Ensure the h1 text is white */
+  font-size: 1.5rem; /* Adjust the font size for visibility */
+  display: inline-flex;
+  align-items: center;
+}
+
+
+/* Map Styling */
+.map {
+  height: calc(100vh - 60px); /* Adjust for header height */
+  position: relative;  /* Ensure the map doesn't get pushed out */
+}
+
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.spinner-img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.map {
+  height: calc(100vh - 60px); /* Adjust for header height */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.location-icon {
+  color: red;
+  font-size: 2rem;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.leaflet-div-icon {
+  background: transparent;
+  border: none;
+}
+
+.location-info-list {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.location-info {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.location-info h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.location-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-info li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1rem;
+  }
+
+  .location-info {
+    max-width: 250px;
+  }
+}
+
+.leaflet-popup-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.leaflet-popup-tip {
+  background-color: #fff;
+}
+
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 0.9rem;
+  }
+
+  .location-info {
+    max-width: 200px;
+  }
+}
